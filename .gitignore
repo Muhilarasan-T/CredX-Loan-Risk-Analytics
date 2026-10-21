@@ -1,0 +1,53 @@
+# ==============================================================================
+# CredX — Git Ignore Configuration
+# ==============================================================================
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables & secrets (CRITICAL: Never commit credentials)
+.env
+*.env
+!.env.example
+credentials.json
+*.pem
+*.key
+
+# Large raw & processed data files (Exclude large CSVs to keep repo lightweight)
+data/raw/*.csv
+data/processed/*.csv
+
+# Retain essential metadata, data dictionary, and validation reports
+!data/raw/.gitkeep
+!data/raw/Data_Dictionary.xlsx
+!data/processed/.gitkeep
+!data/processed/cleaning_report.json
+!data/processed/dropped_columns.json
+
+# Power BI temporary files & auto-recovery backups
+*.tmp
+*.pbix.temp
+~*
+
+# IDE & OS configuration files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & execution traces
+*.log

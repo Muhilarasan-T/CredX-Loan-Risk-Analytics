@@ -1,0 +1,108 @@
+{
+  "project_name": "CredX \u2014 Loan Risk & Repayment Analytics",
+  "phase": "Phase 3: Python Data Cleaning, Column Pruning, and Feature Standardization",
+  "execution_timestamp": "2026-10-19T13:37:54.399889",
+  "input_file": "C:\\Users\\DELL\\CredX\\data\\raw\\loan.csv",
+  "input_dimensions": {
+    "rows": 39717,
+    "columns": 111
+  },
+  "output_dimensions": {
+    "rows": 39717,
+    "columns": 66
+  },
+  "dropped_columns_summary": {
+    "dropped_count": 54,
+    "retained_count": 57
+  },
+  "numeric_conversions": {
+    "int_rate": {
+      "status": "Success",
+      "unit": "Percentage Points (e.g. 10.65 = 10.65%)",
+      "conversion_failures": 0,
+      "min_value": 5.42,
+      "max_value": 24.59
+    },
+    "revol_util": {
+      "status": "Success",
+      "unit": "Percentage Points (e.g. 83.70 = 83.70%)",
+      "null_count_preserved": 50,
+      "min_value": 0.0,
+      "max_value": 99.9
+    }
+  },
+  "date_standardization": {
+    "issue_d": {
+      "original_nulls": 0,
+      "cleaned_nulls": 0,
+      "parsing_failures": 0,
+      "min_date": "2007-06-01",
+      "max_date": "2011-12-01",
+      "century_handling": "2000s vintage"
+    },
+    "last_pymnt_d": {
+      "original_nulls": 71,
+      "cleaned_nulls": 71,
+      "parsing_failures": 0,
+      "min_date": "2008-01-01",
+      "max_date": "2016-05-01",
+      "century_handling": "2000s vintage"
+    },
+    "next_pymnt_d": {
+      "original_nulls": 38577,
+      "cleaned_nulls": 38577,
+      "parsing_failures": 0,
+      "min_date": "2016-06-01",
+      "max_date": "2016-07-01",
+      "century_handling": "2000s vintage"
+    },
+    "last_credit_pull_d": {
+      "original_nulls": 2,
+      "cleaned_nulls": 2,
+      "parsing_failures": 0,
+      "min_date": "2007-05-01",
+      "max_date": "2016-05-01",
+      "century_handling": "2000s vintage"
+    },
+    "earliest_cr_line": {
+      "original_nulls": 0,
+      "cleaned_nulls": 0,
+      "parsing_failures": 0,
+      "min_date": "1946-01-01",
+      "max_date": "2008-11-01",
+      "century_handling": "Split 1900s/2000s at year 2011"
+    }
+  },
+  "data_quality_validation": {
+    "total_rows": 39717,
+    "total_columns": 66,
+    "duplicate_rows": 0,
+    "duplicate_ids": 0,
+    "loan_status_distribution": {
+      "Fully Paid": 32950,
+      "Charged Off": 5627,
+      "Current": 1140
+    },
+    "negative_monetary_counts": {
+      "loan_amnt": 0,
+      "funded_amnt": 0,
+      "funded_amnt_inv": 0,
+      "installment": 0,
+      "annual_inc": 0,
+      "revol_bal": 0,
+      "out_prncp": 0,
+      "total_pymnt": 0,
+      "total_rec_prncp": 0,
+      "total_rec_int": 0,
+      "total_rec_late_fee": 0,
+      "recoveries": 0
+    },
+    "payment_reconciliation": {
+      "formula": "total_pymnt == total_rec_prncp + total_rec_int + total_rec_late_fee + recoveries",
+      "max_absolute_discrepancy": 0.00992000000042026,
+      "rows_with_discrepancy_over_1_cent": 0,
+      "reconciliation_verdict": "Fully Reconciled (within 1 cent rounding)"
+    },
+    "principal_exceeds_funded_count": 0
+  }
+}
